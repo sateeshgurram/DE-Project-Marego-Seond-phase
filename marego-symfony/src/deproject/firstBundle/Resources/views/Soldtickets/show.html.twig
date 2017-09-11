@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div id="container">
+			<div id="header">
+			
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/marego.jpg'  output="images/marego.jpg" %}
+    <img src="{{ asset_url }}" alt="marego" align="right" width="200" height="100" /></div>
+			  {% endimage %}</div></div><br><br><br>
+    <h1>Soldtickets</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Tid</th>
+                <td>{{ entity.tId }}</td>
+            <tr>
+            <br>
+                <th>Cid</th>
+                <td>{{ entity.cId }}</td>
+            </tr>
+            <br>
+            <tr>
+                <th>GId</th>
+                <td>{{ entity.gId }}</td>
+            </tr>
+            <br>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ entity.quantity }}</td>
+            </tr>
+            <br>
+            <tr>
+                <th>Price</th>
+                <td>{{ entity.pricePerTicket }}</td>
+            </tr>
+            <br>
+            <tr>
+                <th>date Created</th>
+                <td>{{ entity.date_created }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('soldtickets') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('soldtickets_edit', { 'id': entity.date,'ticket': entity.Ticket.tName}) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+<div id="footer">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/Capture.jpg'  output="images/Capture.jpg" %}
+    <img src="{{ asset_url }}" alt="Capture" align="bottom" width="1350" height="130" />
+   {% endimage %}</div>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div id="container">
+			<div id="header">
+			
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/marego.jpg'  output="images/marego.jpg" %}
+    <img src="{{ asset_url }}" alt="marego" align="right" width="200" height="100" /></div>
+			  {% endimage %}</div></div><br><br><br>
+    <h1>Partners</h1>
+<div id="content">
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th><label>Pid</label></th>
+                <td>{{ entity.pid }}</td>
+            <tr>
+            <br><br />
+                <th><label>Partner's Name</label></th>
+                <td>{{ entity.pName }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Strasse</label></th>
+                <td>{{ entity.strasse }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>City</label></th>
+                <td>{{ entity.city }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Zipcode</label></th>
+                <td>{{ entity.zipcode }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Fname</label></th>
+                <td>{{ entity.fName }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Lname</label></th>
+                <td>{{ entity.lName }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Title</label></th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Iban</label></th>
+                <td>{{ entity.iban }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Phone</label></th>
+                <td>{{ entity.phone }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Mail</label></th>
+                <td>{{ entity.mail }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Username</label></th>
+                <td>{{ entity.username }}</td>
+            </tr>
+            <br><br />
+            <tr>
+                <th><label>Securitypassword</label></th>
+                <td>{{ entity.securitypassword }}</td>
+            </tr>
+            <br><br />
+        </tbody>
+    </table>
+</label>
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('partners') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('partners_edit', { 'id': entity.pid }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+<div id="footer">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/Capture.jpg'  output="images/Capture.jpg" %}
+    <img src="{{ asset_url }}" alt="Capture" align="bottom" style="position:relative; width:100%" height="130" />
+   {% endimage %}</div>
+{% endblock %}

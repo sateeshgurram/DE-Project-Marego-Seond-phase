@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div id="container">
+			<div id="header">
+			
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/marego.jpg'  output="images/marego.jpg" %}
+    <img src="{{ asset_url }}" alt="marego" align="right" width="200" height="100" /></div>
+			  {% endimage %}</div></div><br><br><br>
+    <h1>PriceCategory</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Cid</th>
+                <td>{{ entity.cId }}</td>
+            </tr>
+            <br><br>
+            <tr>
+                <th>Cname</th>
+                <td>{{ entity.cName }}</td>
+            </tr>
+           
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('pricecategory') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('pricecategory_edit', { 'id': entity.cId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+<div id="footer">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/Capture.jpg'  output="images/Capture.jpg" %}
+    <img src="{{ asset_url }}" alt="Capture" align="bottom" width="1350" height="130" />
+   {% endimage %}</div>
+{% endblock %}

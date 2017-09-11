@@ -1,0 +1,25 @@
+
+
+<div id="container">
+			<div id="header">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/deutsche-bahn.jpg'  output="images/deutsche-bahn.jpg" %}
+    <img src="{{ asset_url }}" alt="DBbahn" align="left" width="100" />
+   {% endimage %}</div>
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/marego.jpg'  output="images/marego.jpg" %}
+    <img src="{{ asset_url }}" alt="marego" align="right" width="200" height="100" /></div>
+			  {% endimage %}</div>
+			<h3 style="padding: 100px 0px 0px 400px;">Personal Portal For Revenue Sharing Process </h3>  <br> 	 </div>
+			<div id="content">
+			<h3>Menu:</h3> <br>
+			<div id="data">
+			<a href="{{ path('partners') }}"> <button>View and Edit Personal Data</button></a>
+			<br><br>
+			
+		
+		<a href="{{ path('soldtickets') }}"><button>View and Edit Soldtickets</button></a><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			<div id="footer">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/Capture.jpg'  output="images/Capture.jpg" %}
+    <img src="{{ asset_url }}" alt="Capture" align="bottom" width="1350" height="130" />
+   {% endimage %}</div>
+			</div>

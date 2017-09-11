@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<div id="container">
+			<div id="header">
+			
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/marego.jpg'  output="images/marego.jpg" %}
+    <img src="{{ asset_url }}" alt="marego" align="right" width="200" height="100" /></div>
+			  {% endimage %}</div></div><br><br><br>
+    <h1>GrantType</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Gid</th>
+                <td>{{ entity.gId }}</td>
+            </tr>
+            <br>
+            <tr>
+                <th>Grantname</th>
+                <td>{{ entity.grantName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('granttype') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('granttype_edit', { 'id': entity.gId }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+<div id="footer">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/Capture.jpg'  output="images/Capture.jpg" %}
+    <img src="{{ asset_url }}" alt="Capture" align="bottom" width="1350" height="130" />
+   {% endimage %}</div>
+{% endblock %}

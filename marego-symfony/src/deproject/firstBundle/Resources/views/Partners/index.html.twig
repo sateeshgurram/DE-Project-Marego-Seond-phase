@@ -1,0 +1,171 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<!DOCTYPE html>
+
+<div id="container">
+			<div id="header">
+			
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/marego.jpg'  output="images/marego.jpg" %}
+    <img src="{{ asset_url }}" alt="marego" align="right" width="150" height="80" />
+    
+    </div>
+			  {% endimage %}
+			  
+			  </div></div><br><br><br>
+			  <br>
+<html>
+<title>Partner Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-navbar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-static">
+  <ul class="w3-navbar w3-red w3-card-2 w3-left-align w3-large">
+    <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+      <a class="w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    </li>
+    <li><a href="#" class="w3-padding-large w3-white">Partners</a></li>
+    <li class="w3-hide-small"><a href="{{path('tickets')}}" class="w3-padding-large w3-hover-white">Tickets</a></li>
+    <li class="w3-hide-small"><a href="{{path('pricecategory')}}" class="w3-padding-large w3-hover-white">Category</a></li>
+    <li class="w3-hide-small"><a href="{{path('granttype')}}" class="w3-padding-large w3-hover-white">Grant</a></li>
+    <li class="w3-hide-small"><a href="{{path('price')}}" class="w3-padding-large w3-hover-white">Price</a></li>
+    <li class="w3-hide-small"><a href="{{path('soldtickets')}}" class="w3-padding-large w3-hover-white">Sold Tickets</a></li>
+  </ul>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
+    <ul class="w3-navbar w3-left-align w3-large w3-black">
+      <li><a class="w3-padding-large" href="#">Tickets</a></li>
+      <li><a class="w3-padding-large" href="#">Catageory</a></li>
+      <li><a class="w3-padding-large" href="#">Grant</a></li>
+      <li><a class="w3-padding-large" href="#">Price</a></li>
+      <li><a class="w3-padding-large" href="#">Sold Tickets</a></li>
+      
+    </ul>
+  </div>
+</div>
+<br>
+ 
+    <!-- Header -->
+<header class="w3-container w3-red w3-center w3-padding-100">
+  <h1 class="w3-margin w3-small">PARTNERS</h1>
+  
+</header
+<div>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+background-color: #4CAF50;
+    color: white;
+}
+
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    
+}
+
+tr:nth-child(odd){background-color: #f2f2f2}
+</style>
+</head>
+<body>
+<div style="overflow-x:auto;">
+    <table >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Partner's Name</th>
+                <th>Strasse</th>
+                <th>City</th>
+                <th>Zipcode</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Title</th>
+                <th>Iban</th>
+                <th>Phone</th>
+                <th>E-Mail</th>
+            
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+			 
+        {% for entity in entities %}
+            <tr>
+                <td><a{{ path('partners_show', { 'id': entity.pid }) }}>{{ entity.pid }}</a></td>
+                <td>{{ entity.pName }}</td>
+                <td>{{ entity.strasse }}</td>
+                <td>{{ entity.city }}</td>
+                <td>{{ entity.zipcode }}</td>
+                <td>{{ entity.fName }}</td>
+                <td>{{ entity.lName }}</td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.iban }}</td>
+                <td>{{ entity.phone }}</td>
+                <td>{{ entity.mail }}</td>
+                <td>
+                <ul>
+                   
+                    
+                        <a href="{{ path('partners_edit', { 'id': entity.pid }) }}">{% image '@deprojectfirstBundle/Resources/public/images/edit.png'  output="images/edit.png" %}
+    <img src="{{ asset_url }}" alt="marego" align="left" width="25" height="25" />
+    {% endimage %}</a>
+                    
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        
+			</tbody>
+    </table>
+</div>
+</div>
+        <ul>
+                    <a href="{{ path('partners_new') }}">
+                {% image '@deprojectfirstBundle/Resources/public/images/add.png'  output="images/add.png" %}
+    <img src="{{ asset_url }}" alt="marego" align="left" width="50" height="50" />
+    {% endimage %}
+            </a>
+        
+    </ul>
+
+    </ul><br><br><br>
+    <div id="footer">
+			<div>{% image '@deprojectfirstBundle/Resources/public/images/Capture.jpg'  output="images/Capture.jpg" %}
+    <img src="{{ asset_url }}" alt="Capture" align="bottom" style="position:relative; width:100%" height="100%" />
+   {% endimage %}</div>
+			</div>
+     <!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+   <a href="#" class="w3-hover-text-indigo"><i class="fa fa-facebook-official"></i></a>
+   <a href="#" class="w3-hover-text-red"><i class="fa fa-pinterest-p"></i></a>
+   <a href="#" class="w3-hover-text-light-blue"><i class="fa fa-twitter"></i></a>
+   <a href="#" class="w3-hover-text-grey"><i class="fa fa-flickr"></i></a>
+   <a href="#" class="w3-hover-text-indigo"><i class="fa fa-linkedin"></i></a>
+ </div>
+ 
+</footer>
+
+
+
+</body>
+    
+    {% endblock %}

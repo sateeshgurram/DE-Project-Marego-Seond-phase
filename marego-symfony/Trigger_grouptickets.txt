@@ -1,0 +1,11 @@
+CREATE DEFINER=`root`@`localhost` TRIGGER `insert_check` BEFORE INSERT ON `soldticket` FOR EACH ROW
+begin
+declare err varchar(200);
+
+
+	if(exists(select * from `test`.`grouptickets`  where  `grouptickets`.ticketid = new.Tid and `grouptickets`.no_of_persons > new.number_of_persons)) then
+	set err = concat( 'Minimum number of tickets violated.');
+	signal sqlstate '45000' set message_text = err;
+  end if;
+
+end
